@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background-color: #181818;
+  font-size: 17px;
+  color: #fff;
+  height: 100vh;
+}
+
+input,
+textarea,
+button{
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+input[type="date"]{
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"]{
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.cl-internal-nfscg9,
+.cl-internal-c4jh7f{
+  width: 100%;
+  height: 100%;
+}
+.cl-internal-c4jh7f{
+  opacity: 0;
+}
+
+.input-control{
+  position: relative;
+  margin: 1.6rem 0;
+  font-weight: 500;
+}
+
+.input-control label{
+  margin-bottom: 0.4rem;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+
+.input-control input,textarea{
+  width: 100%;
+  padding: 1rem;
+  resize: none;
+  background-color: #131313;
+  color: #b2becd;
+  border-radius: 1rem;
+}
+
+.toggler{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.toggler input{
+  width: initial;
+  position: relative;
+  top: -3px;
+}
+
+.theTask{
+  grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px dotted #999999;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tasksLoader {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      position: relative;
+      animation: rotate 1s linear infinite
+    }
+    .tasksLoader::before {
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      inset: 0px;
+      border-radius: 50%;
+      border: 5px solid #FFF;
+      animation: prixClipFix 2s linear infinite ;
+    }
+
+    @keyframes rotate {
+      100%   {transform: rotate(360deg)}
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
